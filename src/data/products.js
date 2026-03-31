@@ -1,5 +1,11 @@
 export const collections = [
   {
+    id: 'imperiale',
+    name: 'F-01 Impériale',
+    image: '/images/imperiale-hero.jpg',
+    description: 'Signature top-handle bag in midnight grain leather with 18k gold-plated clasp.',
+  },
+  {
     id: 'nocturne',
     name: 'Nocturne Collection',
     image:
@@ -13,13 +19,6 @@ export const collections = [
       'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=1600&q=80',
     description: 'Statement pieces with precision-made metalwork.',
   },
-  {
-    id: 'soirée',
-    name: 'Soirée Editions',
-    image:
-      'https://images.unsplash.com/photo-1614179689702-355944cd0918?auto=format&fit=crop&w=1600&q=80',
-    description: 'Evening miniatures in satin and brushed gold.',
-  },
 ]
 
 export const featuredProduct = {
@@ -28,10 +27,19 @@ export const featuredProduct = {
   price: '$2,480',
   subtitle: 'Signature top-handle bag in midnight grain leather.',
   images: [
+    '/images/imperiale-hero.jpg',
     '/images/imperiale-1.jpg',
     '/images/imperiale-2.jpg',
     '/images/imperiale-3.jpg',
-    '/images/imperiale-4.jpg',
+    '/images/imperiale-6.jpg',
+    '/images/imperiale-7.jpg',
+    '/images/imperiale-8.jpg',
+    '/images/imperiale-9.jpg',
+    '/images/imperiale-10.jpg',
+    '/images/imperiale-11.jpg',
+    '/images/imperiale-12.jpg',
+    '/images/imperiale-13.jpg',
+    '/images/imperiale-14.jpg',
   ],
   specs: [
     'Italian full-grain leather with matte protective finish',
