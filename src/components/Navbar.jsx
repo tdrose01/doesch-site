@@ -12,8 +12,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-gold/10 bg-obsidian/85 backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-10">
-        <Link to="/" className="font-display text-2xl tracking-luxe text-gold drop-shadow-[0_0_16px_rgba(127,90,166,0.4)]">
-          DOÉSH FALLANTI
+        <Link to="/" className="flex items-center gap-3">
+          <img src="/images/logo.jpg" alt="Doésh Fallanti" className="h-10 w-10 rounded-full object-cover" />
+          <span className="font-display text-xl tracking-luxe text-gold drop-shadow-[0_0_16px_rgba(127,90,166,0.4)]">
+            DOÉSH FALLANTI
+          </span>
         </Link>
         <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (

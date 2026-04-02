@@ -1,7 +1,7 @@
 export const collections = [
   {
-    id: 'imperiale',
-    name: 'F-01 Impériale',
+    id: 'perla-di-notte',
+    name: 'Perla di Notte',
     image: '/images/imperiale-hero.jpg',
     description: 'Signature top-handle bag in midnight grain leather with 18k gold-plated clasp.',
   },
@@ -22,8 +22,8 @@ export const collections = [
 ]
 
 export const featuredProduct = {
-  slug: 'f-01-imperiale',
-  name: 'F-01 Impériale',
+  slug: 'perla-di-notte',
+  name: 'Perla di Notte',
   price: '$2,480',
   subtitle: 'Signature top-handle bag in midnight grain leather.',
   images: [
@@ -48,5 +48,5 @@ export const featuredProduct = {
     'Dimensions: 26cm x 18cm x 11cm',
   ],
   craftsmanship:
-    'Each F-01 is assembled by a single artisan over 23 hours, with edge painting, saddle stitching, and hardware balancing completed by hand for exceptional symmetry and weight.',
+    'Each Perla di Notte is assembled by a single artisan over 23 hours, with edge painting, saddle stitching, and hardware balancing completed by hand for exceptional symmetry and weight.',
 }

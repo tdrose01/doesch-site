@@ -9,33 +9,45 @@ export default function ProductDetailPage() {
   return (
     <PageShell title={featuredProduct.name} eyebrow="Signature Piece">
       <div className="grid items-start gap-10 lg:grid-cols-2">
-        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65 }} className="space-y-4">
-          <div className="relative h-[34rem] w-full overflow-hidden rounded-sm shadow-luxe">
+        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65 }} className="space-y-6">
+          <div className="relative h-[34rem] w-full overflow-hidden rounded-2xl border border-zinc-700/40 bg-zinc-900 shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-zinc-900/35 via-transparent to-white/10" />
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeIndex}
                 src={featuredProduct.images[activeIndex]}
                 alt={`${featuredProduct.name} - view ${activeIndex + 1}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, scale: 1.02 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.45, ease: 'easeOut' }}
                 className="h-full w-full object-cover"
               />
             </AnimatePresence>
           </div>
-          <div className="flex gap-3">
-            {featuredProduct.images.map((img, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`h-20 w-20 overflow-hidden rounded-sm border-2 transition-all duration-300 ${
-                  i === activeIndex ? 'border-gold shadow-[0_0_12px_rgba(212,175,55,0.4)]' : 'border-zinc-800 hover:border-zinc-600'
-                }`}
-              >
-                <img src={img} alt={`${featuredProduct.name} thumbnail ${i + 1}`} className="h-full w-full object-cover" />
-              </button>
-            ))}
+
+          <div className="space-y-3">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">Gallery</p>
+            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
+              {featuredProduct.images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveIndex(i)}
+                  className={`group relative aspect-square overflow-hidden rounded-xl border transition-all duration-300 ${
+                    i === activeIndex
+                      ? 'border-gold/90 shadow-[0_0_0_1px_rgba(212,175,55,0.55),0_12px_26px_rgba(0,0,0,0.55)]'
+                      : 'border-zinc-700/60 shadow-[0_8px_20px_rgba(0,0,0,0.38)] hover:-translate-y-0.5 hover:border-zinc-400/80 hover:shadow-[0_16px_28px_rgba(0,0,0,0.48)]'
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`${featuredProduct.name} thumbnail ${i + 1}`}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-white/5 opacity-80" />
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
