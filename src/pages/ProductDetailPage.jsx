@@ -26,25 +26,26 @@ export default function ProductDetailPage() {
             </AnimatePresence>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-zinc-500">Gallery</p>
-            <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
+          <div className="space-y-4">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-zinc-400">Gallery</p>
+            <div className="grid grid-cols-3 gap-4 sm:grid-cols-3 lg:grid-cols-4">
               {featuredProduct.images.map((img, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveIndex(i)}
-                  className={`group relative aspect-square overflow-hidden rounded-xl border transition-all duration-300 ${
+                  className={`group relative aspect-[4/5] overflow-hidden rounded-2xl border transition-all duration-500 ${
                     i === activeIndex
-                      ? 'border-gold/90 shadow-[0_0_0_1px_rgba(212,175,55,0.55),0_12px_26px_rgba(0,0,0,0.55)]'
-                      : 'border-zinc-700/60 shadow-[0_8px_20px_rgba(0,0,0,0.38)] hover:-translate-y-0.5 hover:border-zinc-400/80 hover:shadow-[0_16px_28px_rgba(0,0,0,0.48)]'
+                      ? 'border-gold/90 ring-2 ring-gold/30 shadow-[0_0_0_1px_rgba(212,175,55,0.4),0_20px_40px_rgba(0,0,0,0.6),0_0_60px_rgba(212,175,55,0.15)]'
+                      : 'border-zinc-800/70 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-zinc-600/80 hover:shadow-[0_20px_40px_rgba(0,0,0,0.6),0_0_30px_rgba(212,175,55,0.08)]'
                   }`}
                 >
                   <img
                     src={img}
                     alt={`${featuredProduct.name} thumbnail ${i + 1}`}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                   />
-                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-white/5 opacity-80" />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500" />
+                  <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-50" />
                 </button>
               ))}
             </div>
